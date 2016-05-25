@@ -1,13 +1,6 @@
 'use strict';
 
-var Complex = require("../complex");
-
-describe("Complex", function () {
-  it("should add 4 + 5", function () {
-    var number = Complex(4, 5);
-    expect(number).toBe(9);
-  });
-});
+//var Complex = require("../complex");
 
 describe('After Initialisation of Complex Number', function (){
 	var complexNumber
