@@ -21,6 +21,15 @@ describe('After Initialisation of Complex Number', function (){
 	  	it('should Have an imaginary number 2', function() {
 		    expect(complexNumber.imag).toEqual(2);
 	  	});
+
+	  	it('should have get method that returns the number as string', function() {
+		    expect(complexNumber.get()).toEqual('3+2i');
+	  	});
+
+	  	it('should have get method that returns the number as string correct sign', function() {
+		    complexNumber = new Complex(7, -4);
+		    expect(complexNumber.get()).toEqual('7-4i');
+	  	});
 });
 
 describe('Functionality', function (){
