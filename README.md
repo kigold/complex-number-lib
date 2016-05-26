@@ -75,12 +75,18 @@ node.js
 chalk
 
 ### Class Methods
+####Initialisation
+A complex number is created as follows
+```javascript
+var myComplexNumber = new Complex(3,2);
+```
 ####Add
 This function Adds a number(s) to the instance of Complex number.
 #####<parameters>
 it accepts parameters of type 'number' or an object of Complex number. It can accept multiple arguments of these types. It does not support string input
 #####<output>
-It returns the result of the addition performed,that is the state of the number after the addition operarion
+It returns the result of the addition performed,that is the state of the number after the addition operation.
+it returns and object with two key-value pair, real and imag
 ```javascript 
 var myNumber = new Complex(3,2),
 cNum1 = new Complex(3,2),
@@ -89,22 +95,97 @@ num = 4;
 myNumber.add(cNum1,cNum2, 4)
 //returns {real:12, imag:6}
 ```
-####Add
-This function Adds a number(s) to the instance of Complex number.
+####Subtract
+This function Subtracts a number(s) from the instance of Complex number.
 #####<parameters>
 it accepts parameters of type 'number' or an object of Complex number. It can accept multiple arguments of these types. It does not support string input
 #####<output>
-It returns the result of the addition performed,that is the state of the number after the addition operarion
+It returns the result of the subtraction performed,that is the state of the number after the subtraction operation.
+it returns and object with two key-value pair, real and imag
 ```javascript 
 var myNumber = new Complex(3,2),
 cNum1 = new Complex(3,2),
 cNum2 = new Complex(2,2),
 num = 4;
-myNumber.add(cNum1,cNum2, 4)
-//returns {real:12, imag:6}
+myNumber.subtract(cNum1,cNum2, 4)
+//returns {real:-6, imag:-2}
 ```
-
-
+####Multiply
+This function Multiplies a number to the instance of Complex number.
+#####<parameters>
+it accepts parameters of type 'number' or an object of Complex number. It does not support string input.
+#####<output>
+It returns the result of the Multiplication performed,that is the state of the number after the Multiplication operation.
+it returns and object with two key-value pair, real and imag
+```javascript 
+var myNumber = new Complex(3,2),
+cNum1 = new Complex(2,1),
+num = 4;
+myNumber.multiply(cNum1)
+//returns {real:4, imag:7}
+myNumber.multiply(num)
+//returns {real:16, imag:42}
+```
+####Divide 
+This function divides the instance of the Complex number with a number.
+#####<parameters>
+it accepts parameters of type 'number' or an object of Complex number. It does not support string input.
+#####<output>
+It returns the result of the Division performed,that is, the state of the number after the Division operation.
+it returns and object with two key-value pair, real and imag
+```javascript 
+var myNumber = new Complex(2,8),
+cNum1 = new Complex(1,2);
+myNumber.divide(cNum1)
+//returns {real:3.6, imag:0.8}
+```
+####Conjugate
+This Function returns the conjugate of instance of the number without altering the value. Conjugate being the imaginary part multiplied by (-1)
+#####<parameters>
+null, it accepts no argument
+#####<output>
+It returns the Conjugate of the instance of the  Complex number.
+it returns and object with two key-value pair, real and imag
+```javascript 
+var myNumber = new Complex(2,8),
+myNumber.conjugate()
+//returns {real:2, imag:-8}
+```
+####Magnitude
+This Function returns the magnitude of of the Complex number instance, that is, square root of the (real + imainary)
+#####<parameters>
+null, it accepts no argument
+#####<output>
+It returns the Magitude of the instance of the  Complex number.
+it returns a Number
+```javascript 
+var myNumber = new Complex(2,8);
+myNumber.magnitude();
+//returns 8.246
+```
+####isEqual
+This Function compares the an instance of the Complex number object to another and returns a boolean
+#####<parameters>
+An instance of the Complex number 
+#####<output>
+It returns a boolean
+```javascript 
+var myNumber = new Complex(2,8),
+cNum1 = new Complex(1,2);
+myNumber.isEqual(cNum1);
+//returns false
+```
+####toStr
+This Function returns a string of the instance of the Complex Number in this formate  ``` 3+4i``` 
+#####<parameters>
+null, it accepts no argument 
+#####<output>
+it returns a string 
+```javascript 
+var myNumber = new Complex(2,8);
+myNumber.toStr();
+//returns '2+8i'
+```
 
 
 
