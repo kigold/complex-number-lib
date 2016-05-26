@@ -42,7 +42,7 @@ To use without node:
 ```
 
 To add to another project in node:
-*1. Clone this repository
+* 1. Clone this repository
 *2. locate the ```./bin/complex.js```
 *3. copy the complex.js file to a directory in your project that you are convinient with
 *4. In the project file you need the Class, type
