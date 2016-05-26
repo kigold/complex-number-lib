@@ -85,6 +85,18 @@ describe('Functionality', function (){
 		    expect(complexNumber.real).toEqual(3.6);
 	  	})
 
+	  	it('should be divided by complex number ', function() {
+	  		complexNumber = new Complex(3,2)
+		    expect(complexNumber.divide(new Complex(4,-3)).imag).toEqual(0.68);
+		    expect(complexNumber.real).toEqual(0.24);
+	  	})
+
+	  	it('should be divided by complex number ', function() {
+	  		complexNumber = new Complex(4,5)
+		    expect(complexNumber.divide(new Complex(2,6)).imag).toEqual(-0.35);
+		    expect(complexNumber.real).toEqual(0.95);
+	  	})
+
 	  	it('should be divided by real number ', function() {
 		    expect(complexNumber.divide(2).imag).toEqual(1);
 		    expect(complexNumber.real).toEqual(1.5);

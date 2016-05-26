@@ -39,7 +39,7 @@ var Complex = function (real, imag) {
 
 	/*
 	subtract method
-	This Function Adds another number to the Complex number*/
+	This Function Subtracts another number to the Complex number*/
 	this.subtract = function(operand){
 		if (operand instanceof Complex) {
 			this.real -= operand.real;
@@ -55,7 +55,7 @@ var Complex = function (real, imag) {
 
 	/*
 	multiply method
-	This Function Adds another number to the Complex number*/
+	This Function Multiplies another number to the Complex number*/
 	this.multiply = function(operand){
 		if (operand instanceof Complex) {
 			
@@ -65,7 +65,6 @@ var Complex = function (real, imag) {
 			this.real += (this.imag * operand.imag * (-1));
 			this.imag = temp;
 			return this.result();
-
 		}
 		else
 			if (typeof operand == 'number' ){
@@ -74,6 +73,34 @@ var Complex = function (real, imag) {
 				return this.result();
 		}
 	}
+
+	/*
+	divide method
+	This Function divides the complex number by another number
+	*/
+	this.divide = function(operand){
+		//checks if operand is a complex number
+		if (operand instanceof Complex) {
+			//creates the conjugate of the operator
+			var multiplier = new Complex(operand.real, operand.imag *(-1));
+			var temp1  = new Complex(this.real, this.imag);
+			temp1.multiply(multiplier);
+			var temp2 = new Complex(operand.real, operand.imag);
+			temp2.multiply(multiplier);
+			this.real = temp1.real/temp2.real;
+			this.imag = temp1.imag/temp2.real;
+			return this.result();
+
+		}
+		else
+			if (typeof operand == 'number'){
+				this.real /= operand;
+				this.imag /= operand;
+				return this.result();
+			}
+	}
+
+
 
 		
 
