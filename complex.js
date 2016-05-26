@@ -20,14 +20,14 @@ var Complex = function (real, imag) {
 	/*
 	get method
 	returns the real number and the imaginary number of the complex number instance
-	to a function call*/
+	*/
 	this.get = function(){
 		return {real:this.real,imag:this.imag};
 	}
 
 	/*
 	add method
-	This Function Adds another number to the Complex number*/
+	This Function Adds one or more numbers to the Complex number*/
 	this.add = function(){
 		//get all arguments
 		for(var i = 0; i < arguments.length; i++) {
@@ -35,19 +35,18 @@ var Complex = function (real, imag) {
 			if (operand instanceof Complex) {
 				this.real += operand.real;
 				this.imag += operand.imag;
-				return this.get();
 			}
 			else
 				if (typeof operand == 'number' ){
 					this.real += operand;
-					return this.get();
 			}
 		}
+		return this.get();
 	}
 
 	/*
 	subtract method
-	This Function Subtracts another number to the Complex number*/
+	This Function Subtracts one or more numbers to the Complex number*/
 	this.subtract = function(operand){
 		if (operand instanceof Complex) {
 			this.real -= operand.real;
