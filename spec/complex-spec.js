@@ -127,6 +127,19 @@ describe('Functionality', function (){
 		    expect(complexNumber.conjugate()).toEqual(newNumber.result());
 	  	})
 
-});
+	  	it('should have magnitude ', function() {
+	  		complexNumber = new Complex(-2,-5);
+		    expect(complexNumber.magnitude()).toEqual(5.385164807134504);
+	  	})
 
-///Calculate
+	  	it('should have magnitude ', function() {
+	  		complexNumber = new Complex(-2,-5);
+		    expect(complexNumber.magnitude()).toEqual(4.47213595499958);
+	  	})
+
+	  	it('should have magnitude ', function() {
+	  		complexNumber = new Complex(-2,0);
+		    expect(complexNumber.magnitude()).toEqual(2);
+	  	})
+
+});

@@ -104,12 +104,20 @@ var Complex = function (real, imag) {
 			}
 	}
 
-
+	/*
+	conjugate method
+	This Function returns the conjugate of instance of the number without altering the value
+	*/
 	this.conjugate = function(){
 		//this returns the conjugate of the complex number
 		return {real:this.real,imag:this.imag*-1};
 	}
 		
+	/*
+	absolute method
+	This Function returns the absolute value of the number instance
+	*/
+
 
 
 }
