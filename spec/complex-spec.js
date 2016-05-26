@@ -133,7 +133,7 @@ describe('Functionality', function (){
 	  	})
 
 	  	it('should have magnitude ', function() {
-	  		complexNumber = new Complex(-2,-5);
+	  		complexNumber = new Complex(-2,4);
 		    expect(complexNumber.magnitude()).toEqual(4.47213595499958);
 	  	})
 

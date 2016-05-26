@@ -117,7 +117,10 @@ var Complex = function (real, imag) {
 	absolute method
 	This Function returns the absolute value of the number instance
 	*/
-
+	this.magnitude = function(){
+		//this returns the magitude of the complex number instance
+		return Math.sqrt((this.real*this.real) + (this.imag*this.imag));
+	}
 
 
 }
