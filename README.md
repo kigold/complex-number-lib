@@ -42,14 +42,14 @@ To use without node:
 ```
 
 To add to another project in node:
-*1. Clone this repository*
-*2. locate the ```./bin/complex.js```*
-*3. copy the complex.js file to a directory in your project that you are convinient with*
-*4. In the project file you need the Class, type*
+*1. Clone this repository
+*2. locate the ```./bin/complex.js```
+*3. copy the complex.js file to a directory in your project that you are convinient with
+*4. In the project file you need the Class, type
 ```javascript
 var Complex = require('./complex')
 ```
-*5. Insert the correct directory path depending on where you copy the file*
+*5. Insert the correct directory path depending on where you copy the file
 
 
   
