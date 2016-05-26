@@ -1,6 +1,6 @@
 'use strict';
 
-var Complex = require("../complex");
+//var Complex = require("../complex");
 
 describe('After Initialisation of Complex Number', function (){
 	var complexNumber
@@ -23,12 +23,12 @@ describe('After Initialisation of Complex Number', function (){
 	  	});
 
 	  	it('should have get method that returns the number as string', function() {
-		    expect(complexNumber.toString()).toEqual('3+2i');
+		    expect(complexNumber.toStr()).toEqual('3+2i');
 	  	});
 
 	  	it('should have get method that returns the number as string correct sign', function() {
 		    complexNumber = new Complex(7, -4);
-		    expect(complexNumber.toString()).toEqual('7-4i');
+		    expect(complexNumber.toStr()).toEqual('7-4i');
 	  	});
 });
 
@@ -173,12 +173,12 @@ describe('Functionality', function (){
 
 	  	it('should have conjugate ', function() {
 	  		var newNumber = new Complex(3,2);
-		    expect(complexNumber.toString()).toEqual(newNumber.toString());
+		    expect(complexNumber.toStr()).toEqual(newNumber.toStr());
 	  	})
 
 	  	it('should have conjugate ', function() {
 	  		var newNumber = new Complex(3,-2);
-		    expect(complexNumber.conjugate()).toEqual(newNumber.get());
+		    expect(complexNumber.conjugate()).toEqual(newNumber.getValue());
 	  	})
 
 	  	it('should have magnitude ', function() {
