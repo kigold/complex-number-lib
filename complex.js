@@ -116,7 +116,7 @@ var Complex = function (real, imag) {
 	conjugate method
 	This Function returns the conjugate of instance of the number without altering the value
 	*/
-	this.conjugate = function(){
+	this.conjugate = function() {
 		//this returns the conjugate, (multiplies the imaginary part by -1)
 		return {real:this.real,imag:this.imag*-1};
 	}
@@ -125,11 +125,35 @@ var Complex = function (real, imag) {
 	magnitude method
 	This Function returns the magnitude of the number instance
 	*/
-	this.magnitude = function(){
+	this.magnitude = function() {
 		//this returns the magitude of the complex number instance
 		return Math.sqrt((this.real*this.real) + (this.imag*this.imag));
 	}
 
+	/*
+	isEqual method
+	This Function campares two complex numbers based on their real and imaginary number
+	*/
+	this.isEqual = function() {
+		var result = true;
+		//get all arguments
+		for(var i = 0; i < arguments.length; i++) {
+			operand = arguments[i];
+			if (operand instanceof Complex) {
+				if ((this.real !== operand.real) || (this.imag += operand.imag)) {
+					return false;
+				}
+
+			}
+			else
+				if ((typeof operand == 'number') && (this.imag === 0) && (this.real === operand) ){
+					continue;
+			}
+			else
+				{result = false}
+		}
+		return result;
+	}
 
 }
 module.exports = Complex;
