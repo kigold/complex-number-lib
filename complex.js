@@ -37,6 +37,22 @@ var Complex = function (real, imag) {
 		}
 	}
 
+	/*
+	subtract method
+	This Function Adds another number to the Complex number*/
+	this.subtract = function(operand){
+		if (operand instanceof Complex) {
+			this.real -= operand.real;
+			this.imag -= operand.imag;
+			return this.result();
+		}
+		else
+			if (typeof operand == 'number' ){
+				this.real -= operand;
+				return this.result();
+		}
+	}
+
 
 
 		
