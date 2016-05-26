@@ -1,18 +1,18 @@
 #Complex Number Library
 This Library is basically a class that models the concept of complex number
-  as seen in the fields of Mathematics, Engineering Accounting and the likes.
-  In summary, this complex number phenomenon caters for a set of number that 
-  cannot be accounted for by the number line, the number line on which you can 
-  define numbers such as ;
-  *Numbers greater than Zero to the right of zero (Positive Numbers)*
-  *Numbers less than Zero to the left of zero (Negative Numbers)*
-  *and Zero ('the Yard Stick')*
-  in brief, the square root of minus one (-1) was not accommodated by this system, it seemed to be on another axis entirly. [read more on wiki] (https://en.wikipedia.org/wiki/Complex_number).
-  This class implements an instance of this complex number, and provides basic mathematical operations on it;
-  *Addition*
-  *Subtraction*
-  *Multiplication*
-  *and Division*
+as seen in the fields of Mathematics, Engineering Accounting and the likes.
+In summary, this complex number phenomenon caters for a set of number that 
+cannot be accounted for by the number line, the number line on which you can 
+define numbers such as ;
+1. Numbers greater than Zero to the right of zero (Positive Numbers)
+2. Numbers less than Zero to the left of zero (Negative Numbers)
+3. and Zero ('the Yard Stick')
+in brief, the square root of minus one (-1) was not accommodated by this system, it seemed to be on another axis entirly. [read more on wiki] (https://en.wikipedia.org/wiki/Complex_number).
+This class implements an instance of this complex number, and provides basic mathematical operations on it;
+*Addition*
+*Subtraction*
+*Multiplication*
+*and Division*
 
 ###Getting Started
 This Library comes in a mathx package, it can be downloaded by cloning this repository.
@@ -73,6 +73,38 @@ Look at installation.
 ###Built With
 node.js
 chalk
+
+### Class Methods
+####Add
+This function Adds a number(s) to the instance of Complex number.
+#####<parameters>
+it accepts parameters of type 'number' or an object of Complex number. It can accept multiple arguments of these types. It does not support string input
+#####<output>
+It returns the result of the addition performed,that is the state of the number after the addition operarion
+```javascript 
+var myNumber = new Complex(3,2),
+cNum1 = new Complex(3,2),
+cNum2 = new Complex(2,2),
+num = 4;
+myNumber.add(cNum1,cNum2, 4)
+//returns {real:12, imag:6}
+```
+####Add
+This function Adds a number(s) to the instance of Complex number.
+#####<parameters>
+it accepts parameters of type 'number' or an object of Complex number. It can accept multiple arguments of these types. It does not support string input
+#####<output>
+It returns the result of the addition performed,that is the state of the number after the addition operarion
+```javascript 
+var myNumber = new Complex(3,2),
+cNum1 = new Complex(3,2),
+cNum2 = new Complex(2,2),
+num = 4;
+myNumber.add(cNum1,cNum2, 4)
+//returns {real:12, imag:6}
+```
+
+
 
 
 
