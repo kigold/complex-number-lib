@@ -10,6 +10,10 @@ var Complex = function (real, imag) {
 	This function returns the number in 'a+bi' formatE xample, where real = 3,
 	 imginary = 2, this function will return '3+2i'*/
 	this.get = function(){
+		if (this.imag < 0){
+			return String(this.real) + this.imag + 'i';
+		}
+
 		return this.real + '+' + this.imag + 'i';
 	}
 
