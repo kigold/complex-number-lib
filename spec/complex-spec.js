@@ -1,6 +1,6 @@
 'use strict';
 
-var Complex = require("../complex");
+//var Complex = require("../complex");
 
 describe('After Initialisation of Complex Number', function (){
 	var complexNumber
@@ -8,6 +8,12 @@ describe('After Initialisation of Complex Number', function (){
 	    complexNumber = new Complex(3, 2);
 	});
 
+		it('should be initialised', function() {
+			var number = new Complex();
+		   	expect(number.real).toBeDefined();
+		   	expect(number.imag).toBeDefined();
+	  	});
+		
 		it('should Have a real number 3', function() {
 		    expect(complexNumber.real).toEqual(3);
 	  	});
@@ -15,6 +21,13 @@ describe('After Initialisation of Complex Number', function (){
 	  	it('should Have an imaginary number 2', function() {
 		    expect(complexNumber.imag).toEqual(2);
 	  	});
+});
+
+describe('Functionality', function (){
+	var complexNumber
+	beforeEach(function() {
+	    complexNumber = new Complex(3, 2);
+	});
 
 	  	it('should Add complex number ', function() {
 		    expect(complexNumber.add(complexNumber).imag).toEqual(4);
@@ -75,6 +88,11 @@ describe('After Initialisation of Complex Number', function (){
 	  	it('should be divided by real number ', function() {
 		    expect(complexNumber.divide(2).imag).toEqual(1);
 		    expect(complexNumber.real).toEqual(1.5);
+	  	})
+
+	  	it('should be equal ', function() {
+	  		newNumber = new Complex(3,1);
+		    expect(complexNumber).toEqual(newNumber);
 	  	})
 
 });
