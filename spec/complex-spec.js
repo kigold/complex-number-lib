@@ -97,14 +97,25 @@ describe('Functionality', function (){
 		    expect(complexNumber.real).toEqual(0.95);
 	  	})
 
+	  	it('should be divided by complex number ', function() {
+	  		complexNumber = new Complex(-6,-3)
+		    expect(complexNumber.divide(new Complex(4,6)).imag).toEqual(0.46153846153846156);
+		    expect(complexNumber.real).toEqual(-0.8076923076923077);
+	  	})
+
 	  	it('should be divided by real number ', function() {
 		    expect(complexNumber.divide(2).imag).toEqual(1);
 		    expect(complexNumber.real).toEqual(1.5);
 	  	})
 
 	  	it('should be equal ', function() {
-	  		newNumber = new Complex(3,2);
-		    expect(complexNumber).toEqual(newNumber);
+	  		var newNumber = new Complex(3,2);
+		    expect(complexNumber.get()).toEqual(newNumber.get());
+	  	})
+
+	  	it('should be equal ', function() {
+	  		var newNumber = new Complex(3,-2);
+		    expect(complexNumber.conjugate()).toEqual(newNumber.result());
 	  	})
 
 });

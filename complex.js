@@ -82,7 +82,7 @@ var Complex = function (real, imag) {
 		//checks if operand is a complex number
 		if (operand instanceof Complex) {
 			//creates the conjugate of the operator
-			var multiplier = new Complex(operand.real, operand.imag *(-1));
+			var multiplier = new Complex(operand.conjugate().real, operand.conjugate().imag);
 			var temp1  = new Complex(this.real, this.imag);
 			temp1.multiply(multiplier);
 			var temp2 = new Complex(operand.real, operand.imag);
@@ -101,7 +101,10 @@ var Complex = function (real, imag) {
 	}
 
 
-
+	this.conjugate = function(){
+		//this returns the conjugate of the complex number
+		return {real:this.real,imag:this.imag*-1};
+	}
 		
 
 
