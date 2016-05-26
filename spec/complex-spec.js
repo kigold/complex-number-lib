@@ -171,12 +171,12 @@ describe('Functionality', function (){
 		    expect(complexNumber.real).toEqual(1.5);
 	  	})
 
-	  	it('should be equal ', function() {
+	  	it('should have conjugate ', function() {
 	  		var newNumber = new Complex(3,2);
 		    expect(complexNumber.toString()).toEqual(newNumber.toString());
 	  	})
 
-	  	it('should be equal ', function() {
+	  	it('should have conjugate ', function() {
 	  		var newNumber = new Complex(3,-2);
 		    expect(complexNumber.conjugate()).toEqual(newNumber.get());
 	  	})
@@ -196,4 +196,13 @@ describe('Functionality', function (){
 		    expect(complexNumber.magnitude()).toEqual(2);
 	  	})
 
+	  	it('should compare two complex numbers  ', function() {
+	  		var newNumber = new Complex(3,2);
+		    expect(complexNumber.isEqual(newNumber)).toEqual(true);
+	  	})
+
+	  	it('should compare two complex numbers  ', function() {
+	  		var newNumber = new Complex(3,-2);
+		    expect(complexNumber.isEqual(newNumber)).toEqual(false);
+	  	})
 });
