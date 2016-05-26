@@ -48,6 +48,28 @@ describe('Functionality', function (){
 		    expect(complexNumber.real).toEqual(5);
 	  	})
 
+	  	it('should Add multiple complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.add(a,b);
+		    expect(complexNumber.imag).toEqual(11);
+		    expect(complexNumber.real).toEqual(12);
+	  	})
+
+	  	it('should Add multiple real number ', function() {
+	  		complexNumber.add(5, 7);
+		    expect(complexNumber.imag).toEqual(2);
+		    expect(complexNumber.real).toEqual(15);
+	  	})
+
+	  	it('should Add multiple real and complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.add(a,b, 4);
+		    expect(complexNumber.imag).toEqual(11);
+		    expect(complexNumber.real).toEqual(16);
+	  	})
+
 	  	it('should Subtract complex number ', function() {
 		    expect(complexNumber.subtract(new Complex(2,1)).imag).toEqual(1);
 		    expect(complexNumber.real).toEqual(1);
@@ -68,6 +90,22 @@ describe('Functionality', function (){
 		    expect(complexNumber.real).toEqual(-3);
 	  	})
 
+	  	it('should Subtract multiple complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.subtract(a,b);
+		    expect(complexNumber.imag).toEqual(-7);
+		    expect(complexNumber.real).toEqual(-6);
+	  	})
+
+	  	it('should Subtract multiple real and complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.subtract(a,b, 5, -10);
+		    expect(complexNumber.imag).toEqual(-7);
+		    expect(complexNumber.real).toEqual(-1);
+	  	})
+
 	  	it('should Multiply complex number ', function() {
 		    expect(complexNumber.multiply(new Complex(2,1)).imag).toEqual(7);
 		    expect(complexNumber.real).toEqual(4);
@@ -82,6 +120,22 @@ describe('Functionality', function (){
 		    expect(complexNumber.multiply(6).imag).toEqual(12);
 		    expect(complexNumber.real).toEqual(18);
 	  	})
+
+	  	it('should Multiply multiple complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.multiply(a,b);
+		    expect(complexNumber.imag).toEqual(126);
+		    expect(complexNumber.real).toEqual(-58);
+		 })
+
+	  	it('should Multiply multiple complex number ', function() {
+	  		var a = new Complex(4,2);
+	  		var b = new Complex(5,7);
+	  		complexNumber.multiply(a,b, 3);
+		    expect(complexNumber.imag).toEqual(378);
+		    expect(complexNumber.real).toEqual(-174);
+		 })
 
 	  	it('should Multiply negative real number ', function() {
 		    expect(complexNumber.multiply(-4).imag).toEqual(-8);
