@@ -37,6 +37,10 @@ describe('Functionality', function (){
 	beforeEach(function() {
 	    complexNumber = new Complex(3, 2);
 	});
+	  	it('should Add complex number string', function() {
+		    expect(complexNumber.add(new Complex('2', '5')).imag).toEqual(7);
+		    expect(complexNumber.real).toEqual(5);
+	  	})
 
 	  	it('should Add complex number ', function() {
 		    expect(complexNumber.add(complexNumber).imag).toEqual(4);

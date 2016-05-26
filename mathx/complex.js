@@ -1,7 +1,7 @@
 var Complex = function (real, imag) {
 	//initialisation
-	this.real = real || 0;
-	this.imag = imag || 0;
+	this.real = Number(real) || 0;
+	this.imag = Number(imag) || 0;
 
 	//Methods
 
