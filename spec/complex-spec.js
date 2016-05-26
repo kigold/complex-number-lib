@@ -91,7 +91,7 @@ describe('Functionality', function (){
 	  	})
 
 	  	it('should be equal ', function() {
-	  		newNumber = new Complex(3,1);
+	  		newNumber = new Complex(3,2);
 		    expect(complexNumber).toEqual(newNumber);
 	  	})
 

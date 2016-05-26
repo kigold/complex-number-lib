@@ -53,7 +53,27 @@ var Complex = function (real, imag) {
 		}
 	}
 
+	/*
+	multiply method
+	This Function Adds another number to the Complex number*/
+	this.multiply = function(operand){
+		if (operand instanceof Complex) {
+			
+			var temp = this.real * operand.imag;
+			temp += (this.imag * operand.real);
+			this.real *= operand.real 
+			this.real += (this.imag * operand.imag * (-1));
+			this.imag = temp;
+			return this.result();
 
+		}
+		else
+			if (typeof operand == 'number' ){
+				this.real *= operand;
+				this.imag *= operand
+				return this.result();
+		}
+	}
 
 		
 
