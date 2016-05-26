@@ -47,38 +47,43 @@ var Complex = function (real, imag) {
 	/*
 	subtract method
 	This Function Subtracts one or more numbers to the Complex number*/
-	this.subtract = function(operand){
-		if (operand instanceof Complex) {
-			this.real -= operand.real;
-			this.imag -= operand.imag;
-			return this.get();
+	this.subtract = function(){
+		for(var i = 0; i < arguments.length; i++) {
+			operand = arguments[i];
+			if (operand instanceof Complex) {
+				this.real -= operand.real;
+				this.imag -= operand.imag;
+			}
+			else
+				if (typeof operand == 'number' ){
+					this.real -= operand;
+			}
 		}
-		else
-			if (typeof operand == 'number' ){
-				this.real -= operand;
-				return this.get();
-		}
+		return this.get();
 	}
 
 	/*
 	multiply method
 	This Function Multiplies another number to the Complex number*/
-	this.multiply = function(operand){
-		if (operand instanceof Complex) {
-			
-			var temp = this.real * operand.imag;
-			temp += (this.imag * operand.real);
-			this.real *= operand.real 
-			this.real += (this.imag * operand.imag * (-1));
-			this.imag = temp;
-			return this.get();
-		}
-		else
-			if (typeof operand == 'number' ){
-				this.real *= operand;
-				this.imag *= operand
+	this.multiply = function(){
+		for(var i = 0; i < arguments.length; i++) {
+			operand = arguments[i];
+			if (operand instanceof Complex) {
+				var temp = this.real * operand.imag;
+				temp += (this.imag * operand.real);
+				this.real *= operand.real 
+				this.real += (this.imag * operand.imag * (-1));
+				this.imag = temp;
 				return this.get();
+			}
+			else
+				if (typeof operand == 'number' ){
+					this.real *= operand;
+					this.imag *= operand
+					return this.get();
+			}
 		}
+		return this.get();	
 	}
 
 	/*
