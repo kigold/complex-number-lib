@@ -6,10 +6,10 @@ var Complex = function (real, imag) {
 	//Methods
 
 	/*
-	get method
+	toString method
 	This function returns the number in 'a+bi' formatE xample, where real = 3,
 	 imginary = 2, this function will return '3+2i'*/
-	this.get = function(){
+	this.toString = function(){
 		if (this.imag < 0){
 			return String(this.real) + this.imag + 'i';
 		}
@@ -18,26 +18,30 @@ var Complex = function (real, imag) {
 	}
 
 	/*
-	result method
+	get method
 	returns the real number and the imaginary number of the complex number instance
 	to a function call*/
-	this.result = function(){
+	this.get = function(){
 		return {real:this.real,imag:this.imag};
 	}
 
 	/*
 	add method
 	This Function Adds another number to the Complex number*/
-	this.add = function(operand){
-		if (operand instanceof Complex) {
-			this.real += operand.real;
-			this.imag += operand.imag;
-			return this.result();
-		}
-		else
-			if (typeof operand == 'number' ){
-				this.real += operand;
-				return this.result();
+	this.add = function(){
+		//get all arguments
+		for(var i = 0; i < arguments.length; i++) {
+			operand = arguments[i];
+			if (operand instanceof Complex) {
+				this.real += operand.real;
+				this.imag += operand.imag;
+				return this.get();
+			}
+			else
+				if (typeof operand == 'number' ){
+					this.real += operand;
+					return this.get();
+			}
 		}
 	}
 
@@ -48,12 +52,12 @@ var Complex = function (real, imag) {
 		if (operand instanceof Complex) {
 			this.real -= operand.real;
 			this.imag -= operand.imag;
-			return this.result();
+			return this.get();
 		}
 		else
 			if (typeof operand == 'number' ){
 				this.real -= operand;
-				return this.result();
+				return this.get();
 		}
 	}
 
@@ -68,13 +72,13 @@ var Complex = function (real, imag) {
 			this.real *= operand.real 
 			this.real += (this.imag * operand.imag * (-1));
 			this.imag = temp;
-			return this.result();
+			return this.get();
 		}
 		else
 			if (typeof operand == 'number' ){
 				this.real *= operand;
 				this.imag *= operand
-				return this.result();
+				return this.get();
 		}
 	}
 
@@ -93,14 +97,14 @@ var Complex = function (real, imag) {
 			temp2.multiply(multiplier);
 			this.real = temp1.real/temp2.real;
 			this.imag = temp1.imag/temp2.real;
-			return this.result();
+			return this.get();
 
 		}
 		else
 			if (typeof operand == 'number'){
 				this.real /= operand;
 				this.imag /= operand;
-				return this.result();
+				return this.get();
 			}
 	}
 
@@ -109,13 +113,13 @@ var Complex = function (real, imag) {
 	This Function returns the conjugate of instance of the number without altering the value
 	*/
 	this.conjugate = function(){
-		//this returns the conjugate of the complex number
+		//this returns the conjugate, (multiplies the imaginary part by -1)
 		return {real:this.real,imag:this.imag*-1};
 	}
 		
 	/*
-	absolute method
-	This Function returns the absolute value of the number instance
+	magnitude method
+	This Function returns the magnitude of the number instance
 	*/
 	this.magnitude = function(){
 		//this returns the magitude of the complex number instance

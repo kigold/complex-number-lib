@@ -23,12 +23,12 @@ describe('After Initialisation of Complex Number', function (){
 	  	});
 
 	  	it('should have get method that returns the number as string', function() {
-		    expect(complexNumber.get()).toEqual('3+2i');
+		    expect(complexNumber.toString()).toEqual('3+2i');
 	  	});
 
 	  	it('should have get method that returns the number as string correct sign', function() {
 		    complexNumber = new Complex(7, -4);
-		    expect(complexNumber.get()).toEqual('7-4i');
+		    expect(complexNumber.toString()).toEqual('7-4i');
 	  	});
 });
 
@@ -173,12 +173,12 @@ describe('Functionality', function (){
 
 	  	it('should be equal ', function() {
 	  		var newNumber = new Complex(3,2);
-		    expect(complexNumber.get()).toEqual(newNumber.get());
+		    expect(complexNumber.toString()).toEqual(newNumber.toString());
 	  	})
 
 	  	it('should be equal ', function() {
 	  		var newNumber = new Complex(3,-2);
-		    expect(complexNumber.conjugate()).toEqual(newNumber.result());
+		    expect(complexNumber.conjugate()).toEqual(newNumber.get());
 	  	})
 
 	  	it('should have magnitude ', function() {
