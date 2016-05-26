@@ -1,6 +1,6 @@
 'use strict';
 
-//var Complex = require("../complex");
+var Complex = require("../complex");
 
 describe('After Initialisation of Complex Number', function (){
 	var complexNumber
