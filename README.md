@@ -62,7 +62,11 @@ This option is posible only if you have node and npm installed, and cloned the e
 2. type  ``` jasmin-node spec``` this should reference the spec directory containing the complex-spec.js file
 #####Running test via web browser
 1. From the repository download, copy all files into your project root directory ('what you actually need are, lib, spec, and SpecRunner.html)
-2. open the 'SpecRunner.html' with your browser.
+2.Comment the first line in the 'complex-spec.js file' 
+```javascript
+//var Complex = require("../complex");
+```
+3. open the 'SpecRunner.html' with your browser.
 
 These tests basically tests all the functionality of the Class
 You can add to the test cases by editing the './spec/complex-spec.js' file
