@@ -26,14 +26,17 @@ npm
 ```
 
 ###Installation
-Node.js and npm are required to use the Console User Interface, follow these steps:
+Node.js and npm are required to use the Console User Interface, follow these steps
+
 1. Clone this repository
 2. change directory ('cd') into the repository directory
 3. ```npm install --save ``` you should find that node has created a dir 'node_modules', this is where all the dependencies are downloaded to.
 4. When the installation of dependecies are complete, change directory ('cd') to 'mathx' directory and then type ``` node cli``` this is the 'Command Line Interface'
-5 type 'help' to see instructions.
+5. type 'help' to see instructions.
 
 To use without node:
+
+
 1. Clone this repository
 2. copy the complex.js file from the ``` ./bin/complex.js ``` into any directory you need it*
 3. if it is a web based project, just include the script tag
@@ -57,6 +60,8 @@ Test are run using Jasmine.
 The test can be carried out using node.js or using a web browser
 #####Running test using node to run Jasmine
 This option is posible only if you have node and npm installed, and cloned the entire repository
+
+
 1. cd into the repository directory
 2. type ``` npm install -save```
 3. change directory to 'mathx'
@@ -64,7 +69,7 @@ This option is posible only if you have node and npm installed, and cloned the e
 The test cases are found in './mathx/spec/complex-spec.js', you can expand the test coverage by adding more test cases.
 #####Running test via web browser
 1. From the repository downloaded, copy all files into your project root directory ('what you actually need are, lib , spec, and SpecRunner.html)
-2.Comment the first line in the 'complex-spec.js file' 
+2. Comment the first line in the 'complex-spec.js file' 
 ```javascript
 //var Complex = require("../complex");
 ```
