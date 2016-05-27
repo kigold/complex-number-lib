@@ -8,7 +8,19 @@ var chalk = require('chalk');
 //This Fucntion splits strings complex number to its components
 var complex_parse = function(string) {
 	var real, imag, regex, match, a, b, c;
-	var store_string = string;
+	var real_parity= 1, imag_parity = 1;
+	//check if imaginary number is positive or negative
+	if (string.indexOf('-') >= 0){
+		if (String(string).indexOf('-') == 0) {
+			real_parity= (-1);
+			if (string.indexOf('-',1) > 0)  {
+				imag_parity = (-1);
+			}
+		}
+		if (string.indexOf('-') > 0) {
+			imag_parity = (-1);
+		}
+	}
 
 	regex = /^([-+]?(?:\d+|\d*\.\d+))?[-+]?(\d+|\d*\.\d+)?[ij]$/i;
 	string = String(string).replace (/\s+/g, '');
@@ -26,9 +38,9 @@ var complex_parse = function(string) {
 	imag = parseFloat ((b || "+") + (c || "i"));
 
 	//check if imaginary number is positive or negative
-	if (store_string.indexOf('-')>1)
-		{} //imag *= (-1);}
-
+	real*= real_parity;
+	imag *= imag_parity
+	
 	return new Complex(real, imag);
 };
 /////
@@ -148,7 +160,7 @@ vorpal.command('conjugate [number]', 'derives the conjugate of a complex number'
 			sum = String(numb.real) + '-' + numb.imag + 'i';
 		}
 	else {
-		sum = numb.real + '+' + numb.imag + 'i';
+		sum = numb.real + '+' + numb.imag*-1 + 'i';
 		}
 	
 	this.log(sum);	
