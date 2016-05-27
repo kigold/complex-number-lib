@@ -47,7 +47,7 @@ vorpal.command('add [numbers...]', 'Adds numbers together')
 	cb(undefined, sum);
 });
 
-///add complex
+///add complex numbers 
 vorpal.command('adc [numbers...]', 'Adds complex numbers together')
 .alias('adc')
 .action(function (args, cb) {
@@ -65,7 +65,7 @@ vorpal.command('adc [numbers...]', 'Adds complex numbers together')
 	cb(undefined, sum);
 });
 
-///subtract complex
+///subtract complex numbers
 vorpal.command('sub [numbers...]', 'Subtracts complex numbers together')
 .alias('sub')
 .action(function (args, cb) {
@@ -84,7 +84,7 @@ vorpal.command('sub [numbers...]', 'Subtracts complex numbers together')
 	cb(undefined, sum);
 });
 
-///multiply complex
+///multiply complex numbers
 vorpal.command('multiply [numbers...]', 'multiplies complex numbers together')
 .alias('mlt')
 .action(function (args, cb) {
@@ -94,6 +94,26 @@ vorpal.command('multiply [numbers...]', 'multiplies complex numbers together')
 				complex_parse(numbers[0]).imag);
 	for (var i = 1; i < numbers.length; i++) {
 		numb.multiply(new Complex(Number(complex_parse(numbers[i]).real), 
+				Number(complex_parse(numbers[i]).imag)));
+
+		sum = numb.toStr();
+
+	}
+	this.log(sum);
+	cb(undefined, sum);
+});
+
+///divide complex numbers
+vorpal.command('divide [numbers...]', 'divides complex one complex nu\
+	mber from another')
+.alias('div')
+.action(function (args, cb) {
+	var numbers = args.numbers;
+	var sum = 0;
+	var numb = new Complex(complex_parse(numbers[0]).real, 
+				complex_parse(numbers[0]).imag);
+	for (var i = 1; i < numbers.length; i++) {
+		numb.divide(new Complex(Number(complex_parse(numbers[i]).real), 
 				Number(complex_parse(numbers[i]).imag)));
 
 		sum = numb.toStr();
