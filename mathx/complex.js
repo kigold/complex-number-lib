@@ -142,11 +142,9 @@ var Complex = function (real, imag) {
 			operand = arguments[i];
 			if (operand instanceof Complex) {
 				if (this.real != operand.real) {
-					console.log("false real not equal");
 					return false;
 				}
 				if (this.imag != operand.imag) {
-					console.log("false imag not equal");
 					return false;
 				}
 
