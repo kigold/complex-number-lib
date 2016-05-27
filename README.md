@@ -190,6 +190,21 @@ var myNumber = new Complex(2,8);
 myNumber.toStr();
 //returns '2+8i'
 ```
+####getVal
+returns the real number and the imaginary number of the complex number instance
+      ``` 3+4i``` 
+#####<parameters>
+null, it accepts no argument 
+#####<output>
+it returns an object with two key-value pair, real and imag.
+it can be obtained with '.' notation
+result.real
+result.imag
+```javascript 
+var myNumber = new Complex(2,8);
+myNumber.getVal();
+//returns {real:this.real,imag:this.imag}
+```
 
 
 
