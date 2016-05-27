@@ -135,6 +135,26 @@ vorpal.command('magnitude [number]', 'claculates the magnitude of a complex numb
 	cb(undefined, sum);
 });
 
+///conjugate of complex numbers
+vorpal.command('conjugate [number]', 'derives the conjugate of a complex number')
+.alias('cju')
+.action(function (args, cb) {
+	var number = args.number;
+	var numb = new Complex(complex_parse(number).real, 
+				complex_parse(number).imag);
+	var sum = numb.conjugate();
+
+	if (sum.imag < 0){
+			sum = String(numb.real) + '-' + numb.imag + 'i';
+		}
+	else {
+		sum = numb.real + '+' + numb.imag + 'i';
+		}
+	
+	this.log(sum);	
+	cb(undefined, sum);
+});
+
 
 
 ///double
