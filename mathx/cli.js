@@ -123,6 +123,18 @@ vorpal.command('divide [numbers...]', 'divides complex one complex nu\
 	cb(undefined, sum);
 });
 
+///magnitude of complex numbers
+vorpal.command('magnitude [number]', 'claculates the magnitude of a complex number')
+.alias('mag')
+.action(function (args, cb) {
+	var number = args.number;
+	var numb = new Complex(complex_parse(number).real, 
+				complex_parse(number).imag);
+	var sum = numb.magnitude();
+	this.log(sum);
+	cb(undefined, sum);
+});
+
 
 
 ///double
