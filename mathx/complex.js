@@ -74,13 +74,13 @@ var Complex = function (real, imag) {
 				this.real *= operand.real 
 				this.real += (this.imag * operand.imag * (-1));
 				this.imag = temp;
-				return this.getValue();
+				//return this.getValue();
 			}
 			else
 				if (typeof operand == 'number' ){
 					this.real *= operand;
 					this.imag *= operand
-					return this.getValue();
+					//return this.getValue();
 			}
 		}
 		return this.getValue();	
