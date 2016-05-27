@@ -28,10 +28,10 @@ npm
 ###Installation
 Node.js and npm are required to use the Console User Interface, follow these steps:
 1. Clone this repository
-2. cd into the repository directory
-3. ```npm install -g ```
-4. When the installation of dependecies are complete type ``` node complex```
-5 follow the prompt
+2. change directory ('cd') into the repository directory
+3. ```npm install --save ``` you should find that node has created a dir 'node_modules', this is where all the dependencies are downloaded to.
+4. When the installation of dependecies are complete, change directory ('cd') to 'mathx' directory and then type ``` node cli``` this is the 'Command Line Interface'
+5 type 'help' to see instructions.
 
 To use without node:
 1. Clone this repository
@@ -44,13 +44,13 @@ To use without node:
 To add to another project in node:
 
 1. Clone this repository
-2. locate the ```./bin/complex.js```
-3. copy the complex.js file to a directory in your project that you are convinient with
+2. locate the ```./mathx/complex.js```
+3. copy the complex.js file to a directory of your project.
 4. In the project file you need the Class, type
 ```javascript
 var Complex = require('./complex')
 ```
-5. Insert the correct directory path depending on where you copy the file
+5. Insert the correct directory path depending on where you put the file
 
 ###Runing the tests
 Test are run using Jasmine.
@@ -58,25 +58,30 @@ The test can be carried out using node.js or using a web browser
 #####Running test using node to run Jasmine
 This option is posible only if you have node and npm installed, and cloned the entire repository
 1. cd into the repository directory
-2. type ``` npm install -g```
-2. type  ``` jasmin-node spec``` this should reference the spec directory containing the complex-spec.js file
+2. type ``` npm install -save```
+3. change directory to 'mathx'
+4. type  ``` jasmin-node spec``` this should reference the spec directory containing the complex-spec.js file
+The test cases are found in './mathx/spec/complex-spec.js', you can expand the test coverage by adding more test cases.
 #####Running test via web browser
-1. From the repository download, copy all files into your project root directory ('what you actually need are, lib, spec, and SpecRunner.html)
+1. From the repository downloaded, copy all files into your project root directory ('what you actually need are, lib , spec, and SpecRunner.html)
 2.Comment the first line in the 'complex-spec.js file' 
 ```javascript
 //var Complex = require("../complex");
 ```
 3. open the 'SpecRunner.html' with your browser.
 
-These tests basically tests all the functionality of the Class
-You can add to the test cases by editing the './spec/complex-spec.js' file
+These tests basically all the functionality of the Class
+You can add to the test cases by editing the './math/spec/complex-spec.js' file
 
 ###Deployment
 Look at installation.
 
 ###Built With
-node.js
-chalk
+The Complex class was built with javascript only.
+The Command User Interface however was made possible with the aid of the following:
+* chalk 
+* commander
+* vorpal
 
 ### Class Methods
 ####Initialisation
@@ -205,6 +210,26 @@ var myNumber = new Complex(2,8);
 myNumber.getVal();
 //returns {real:this.real,imag:this.imag}
 ```
+
+### Command Line Interface 
+This User interface was created to give an overview of the functions of the Complex Class Library.
+It can only be used with node, which helps to install the dependecies.
+Got to Installation for how to set up.
+#### User Operations
+After setup, type ``` node cli ```
+If all is set well, you should get this prompt:
+```code
+Complex Number Calc:
+```
+type 'help' to get all available commands
+##### add
+Type 'add' followed by the arguments, which are specifically in this form
+```
+    a+bi
+```
+where a is the real part of the number, and be is the imaginary part
+
+
 
 
 
