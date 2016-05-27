@@ -27,7 +27,9 @@ var complex_parse = function(string) {
 
 	match = string.match (regex);
 	if (!match) {
-		throw new Error("Invalid input to Complex.parse, expecting a + bi format");
+		//throw new Error("Invalid input to Complex.parse, expecting a + bi format");
+		console.log("Invalid User Input");
+		return new Complex();
 	}
 
 	a = match[1];
