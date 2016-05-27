@@ -206,7 +206,7 @@ describe('Functionality', function (){
 	  	})
 
 	  	it('should compare two complex numbers  ', function() {
-	  		var newNumber = new Complex(3,6);
+	  		var newNumber = new Complex(3,5);
 		    expect(complexNumber.isEqual(newNumber)).toEqual(false);
 	  	})
 
@@ -214,5 +214,11 @@ describe('Functionality', function (){
 	  		var newNumber = new Complex(3,2);
 	  		var newNumber2 = new Complex(3,2);
 		    expect(complexNumber.isEqual(newNumber, newNumber2)).toEqual(true);
+	  	})
+
+	  	it('should compare multiple complex numbers  ', function() {
+	  		var newNumber = new Complex(3,2);
+	  		var newNumber2 = new Complex(1,5);
+		    expect(complexNumber.isEqual(newNumber, newNumber2)).toEqual(false);
 	  	})
 });

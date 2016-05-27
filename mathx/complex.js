@@ -20,6 +20,7 @@ var Complex = function (real, imag) {
 	/*
 	getValue method
 	returns the real number and the imaginary number of the complex number instance
+
 	*/
 	this.getValue = function(){
 		return {real:this.real,imag:this.imag};
@@ -74,13 +75,13 @@ var Complex = function (real, imag) {
 				this.real *= operand.real 
 				this.real += (this.imag * operand.imag * (-1));
 				this.imag = temp;
-				//return this.getValue();
+				
 			}
 			else
 				if (typeof operand == 'number' ){
 					this.real *= operand;
 					this.imag *= operand
-					//return this.getValue();
+					
 			}
 		}
 		return this.getValue();	
@@ -140,7 +141,12 @@ var Complex = function (real, imag) {
 		for(var i = 0; i < arguments.length; i++) {
 			operand = arguments[i];
 			if (operand instanceof Complex) {
-				if ((this.real !== operand.real) || (this.imag += operand.imag)) {
+				if (this.real != operand.real) {
+					console.log("false real not equal");
+					return false;
+				}
+				if (this.imag != operand.imag) {
+					console.log("false imag not equal");
 					return false;
 				}
 
@@ -150,7 +156,7 @@ var Complex = function (real, imag) {
 					continue;
 			}
 			else
-				{result = false}
+				{result = false;}
 		}
 		return result;
 	}
